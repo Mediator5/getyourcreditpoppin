@@ -7,7 +7,7 @@ export const services = [
     short: "We audit all three bureau reports and challenge inaccurate, unverifiable and outdated items.",
     long: "We pull apart your Experian, Equifax and TransUnion reports line by line, then challenge anything inaccurate, incomplete, outdated or unverifiable — collections, late payments, charge-offs, repossessions, inquiries and more. Every round is tracked so you always know where things stand.",
     points: ["3-bureau report audit", "Custom dispute letters", "Creditor & collector follow-up", "Round-by-round progress updates"],
-    image: img.documents,
+    image: img.paperwork,
   },
   {
     slug: "credit-building",
@@ -15,7 +15,7 @@ export const services = [
     short: "Add positive history the right way so your score has something strong to grow on.",
     long: "Removing negatives is only half the story. We help you add the right mix of positive accounts — secured cards, credit-builder accounts and smart utilization habits — so lenders see a profile that's growing in the right direction.",
     points: ["Positive tradeline strategy", "Utilization game plan", "Thin-file & no-credit help", "Payment-history coaching"],
-    image: img.manLaptop,
+    image: img.phoneApp,
   },
   {
     slug: "debt-coaching",
@@ -23,7 +23,7 @@ export const services = [
     short: "A realistic plan to pay down balances, avoid new damage and keep more of your money.",
     long: "Credit and cash flow go hand in hand. We build a simple budget and payoff plan that fits your real life, so you can lower balances, avoid new late payments and stay on track long after your report is cleaned up.",
     points: ["Personal budget blueprint", "Debt payoff order", "Collections negotiation tips", "Habits that protect your score"],
-    image: img.coupleKitchen,
+    image: img.reviewing,
   },
   {
     slug: "home-auto-readiness",
@@ -31,7 +31,7 @@ export const services = [
     short: "Get lender-ready for the house, car or business funding you've been working toward.",
     long: "Have a big purchase in mind? We work backwards from your goal — a mortgage, an auto loan, a business line — and prioritize the moves that matter most to lenders so you walk in prepared and confident.",
     points: ["Goal-based action plan", "Mortgage & auto score targets", "Debt-to-income guidance", "Lender-ready checklist"],
-    image: img.newHome,
+    image: img.movingIn,
   },
 ];
 
@@ -54,10 +54,22 @@ export const steps = [
 ];
 
 export const unlocks = [
-  { title: "Homeownership", body: "Qualify for a mortgage and stop paying someone else's.", image: img.keys },
-  { title: "Car Financing", body: "Drive off with a better rate and a lower monthly payment.", image: img.cardPayment },
-  { title: "Lower Interest", body: "Better credit can mean paying far less on every loan and card.", image: img.charts },
-  { title: "Business Funding", body: "Open doors to the capital you need to grow your business.", image: img.businessMan },
+  { title: "Homeownership", body: "Qualify for a mortgage and stop paying someone else's.", image: img.keysDoor },
+  { title: "Car Financing", body: "Drive off with a better rate and a lower monthly payment.", image: img.carKey },
+  { title: "Lower Interest", body: "Better credit can mean paying far less on every loan and card.", image: img.phoneStudio },
+  { title: "Business Funding", body: "Open doors to the capital you need to grow your business.", image: img.shopOwner },
+];
+
+/** Goals our clients work toward — used in the photo gallery strip. */
+export const dreams = [
+  { label: "The first home", image: img.kitchenCouple },
+  { label: "A fresh start", image: img.celebrate },
+  { label: "The new car", image: img.carCouple },
+  { label: "My own business", image: img.entrepreneur },
+  { label: "Security for my kids", image: img.dadDaughter },
+  { label: "Lower payments", image: img.phoneApp },
+  { label: "Finally approved", image: img.manSuit },
+  { label: "Peace of mind", image: img.momSon },
 ];
 
 export const negativeItems = [

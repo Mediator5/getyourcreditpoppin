@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 import type { Img } from "@/lib/images";
 import { negativeItems } from "@/lib/content";
 import { site } from "@/lib/site";
-import { Parallax, Reveal } from "./motion";
+import { ClipReveal, Parallax, Reveal } from "./motion";
 
 export function SectionHeading({
   eyebrow,
@@ -143,43 +143,57 @@ export function PageHero({
   title,
   lede,
   image,
+  image2,
 }: {
   eyebrow: string;
   title: ReactNode;
   lede: string;
   image: Img;
+  image2?: Img;
 }) {
   return (
-    <section className="relative overflow-hidden pt-10 pb-16 sm:pt-16 sm:pb-24">
-      <div className="pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full bg-brand-200/50 blur-3xl" />
-      <div className="pointer-events-none absolute top-20 -right-20 h-72 w-72 rounded-full bg-pop-100 blur-3xl" />
-      <div className="container-x relative grid items-center gap-12 lg:grid-cols-2">
+    <section className="relative overflow-hidden bg-ink pt-10 pb-20 text-white sm:pt-16 sm:pb-28">
+      <div className="grain pointer-events-none absolute inset-0" />
+      <div className="pointer-events-none absolute -top-40 -left-40 h-[32rem] w-[32rem] rounded-full bg-brand-500/30 blur-[120px]" />
+      <div className="pointer-events-none absolute -right-32 bottom-[-12rem] h-[28rem] w-[28rem] rounded-full bg-pop-500/20 blur-[120px]" />
+      <div className="container-x relative grid items-center gap-14 lg:grid-cols-2">
         <div>
           <Reveal>
-            <span className="eyebrow">
+            <span className="eyebrow-dark">
               <Sparkles className="h-3.5 w-3.5" /> {eyebrow}
             </span>
           </Reveal>
           <Reveal delay={0.06}>
-            <h1 className="display-title mt-6">{title}</h1>
+            <h1 className="display-title mt-6 lg:text-[4.2rem]">{title}</h1>
           </Reveal>
           <Reveal delay={0.12}>
-            <p className="lede mt-6 max-w-xl">{lede}</p>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">{lede}</p>
           </Reveal>
           <Reveal delay={0.18}>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact#consultation" className="btn-pop group">
                 Free Consultation <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
-              <a href={site.phoneHref} className="btn-ghost">
+              <a href={site.phoneHref} className="btn-ghost-dark">
                 <Phone className="h-4 w-4" /> {site.phone}
               </a>
             </div>
           </Reveal>
         </div>
-        <Reveal delay={0.1} x={30} y={0}>
-          <Photo image={image} priority className="aspect-[4/3] rounded-[2rem] shadow-lift" parallax={30} />
-        </Reveal>
+        <div className="relative pb-10 lg:pb-0">
+          <ClipReveal delay={0.15} className="ml-auto aspect-[4/3] w-full overflow-hidden rounded-[2rem] shadow-lift sm:w-[88%]">
+            <Photo image={image} priority className="h-full" />
+          </ClipReveal>
+          {image2 && (
+            <ClipReveal
+              delay={0.45}
+              direction="right"
+              className="absolute -bottom-2 left-0 hidden aspect-[4/5] w-[34%] overflow-hidden rounded-[1.5rem] border-[6px] border-ink shadow-lift sm:block lg:-bottom-12"
+            >
+              <Photo image={image2} priority className="h-full" sizes="20vw" />
+            </ClipReveal>
+          )}
+        </div>
       </div>
     </section>
   );

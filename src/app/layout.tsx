@@ -1,11 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import "@fontsource-variable/plus-jakarta-sans";
 import "@fontsource/instrument-serif/400-italic.css";
+import "lenis/dist/lenis.css";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileCTA } from "@/components/MobileCTA";
 import { MotionProvider } from "@/components/motion";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
     url: site.url,
-    images: [{ url: "https://images.unsplash.com/photo-1758523671285-9ff3f4e0ff38?w=1200&h=630&fit=crop", width: 1200, height: 630 }],
+    images: [{ url: "https://images.unsplash.com/photo-1602780765205-532dc7f6ded3?w=1200&h=630&fit=crop", width: 1200, height: 630 }],
   },
   twitter: { card: "summary_large_image" },
 };
@@ -62,6 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <SmoothScroll />
         <MotionProvider>
           <Header />
           <main>{children}</main>

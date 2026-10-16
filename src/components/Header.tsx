@@ -22,6 +22,9 @@ export function Header() {
 
   useEffect(() => setOpen(false), [pathname]);
 
+  // Every page opens on a dark hero, so the header starts dark and turns light on scroll.
+  const dark = !scrolled && !open;
+
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
@@ -29,7 +32,7 @@ export function Header() {
   return (
     <>
       {/* Utility bar */}
-      <div className="hidden bg-ink text-white/75 md:block">
+      <div className="hidden border-b border-white/10 bg-ink text-white/75 md:block">
         <div className="container-x flex h-10 items-center justify-between text-[0.8rem]">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
@@ -47,13 +50,15 @@ export function Header() {
 
       <header
         className={`sticky top-0 z-50 transition-all duration-500 ${
-          scrolled ? "border-b border-line/80 bg-white/80 shadow-soft backdrop-blur-xl" : "bg-white/0"
+          dark ? "bg-ink" : "border-b border-line/80 bg-white/85 shadow-soft backdrop-blur-xl"
         }`}
       >
         <div className={`container-x flex items-center justify-between transition-all duration-500 ${scrolled ? "h-16" : "h-20"}`}>
-          <Logo />
+          <Logo dark={dark} />
 
-          <nav className="hidden items-center gap-1 rounded-full border border-line bg-white/70 p-1 backdrop-blur lg:flex" aria-label="Main">
+          <nav className={`hidden items-center gap-1 rounded-full border p-1 backdrop-blur transition-colors duration-500 lg:flex ${
+              dark ? "border-white/10 bg-white/5" : "border-line bg-white/70"
+            }`} aria-label="Main">
             {nav.map((l) => {
               const active = l.href === "/" ? pathname === "/" : pathname.startsWith(l.href);
               return (
@@ -61,13 +66,13 @@ export function Header() {
                   key={l.href}
                   href={l.href}
                   className={`relative rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
-                    active ? "text-white" : "text-ink/70 hover:text-ink"
+                    active ? (dark ? "text-ink" : "text-white") : dark ? "text-white/70 hover:text-white" : "text-ink/70 hover:text-ink"
                   }`}
                 >
                   {active && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 -z-10 rounded-full bg-ink"
+                      className={`absolute inset-0 -z-10 rounded-full ${dark ? "bg-white" : "bg-ink"}`}
                       transition={{ type: "spring", stiffness: 380, damping: 32 }}
                     />
                   )}
@@ -78,8 +83,8 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <a href={site.phoneHref} className="hidden items-center gap-2 px-3 text-sm font-semibold text-ink xl:flex">
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-brand-50 text-brand-600">
+            <a href={site.phoneHref} className={`hidden items-center gap-2 px-3 text-sm font-semibold xl:flex ${dark ? "text-white" : "text-ink"}`}>
+              <span className={`grid h-9 w-9 place-items-center rounded-full ${dark ? "bg-white/10 text-pop-400" : "bg-brand-50 text-brand-600"}`}>
                 <Phone className="h-4 w-4" />
               </span>
               {site.phone}
@@ -92,7 +97,9 @@ export function Header() {
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
-              className="grid h-11 w-11 place-items-center rounded-full border border-line bg-white lg:hidden"
+              className={`grid h-11 w-11 place-items-center rounded-full border lg:hidden ${
+                dark ? "border-white/15 bg-white/5 text-white" : "border-line bg-white text-ink"
+              }`}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
             >

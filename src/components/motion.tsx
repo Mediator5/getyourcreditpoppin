@@ -149,3 +149,78 @@ export function GrowLine({ className }: { className?: string }) {
     />
   );
 }
+
+/** Unveils its content with an expanding clip-path wipe + subtle zoom-out. */
+export function ClipReveal({
+  children,
+  className,
+  delay = 0,
+  direction = "up",
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+  direction?: "up" | "left" | "right";
+}) {
+  const from =
+    direction === "up" ? "inset(100% 0% 0% 0%)" : direction === "left" ? "inset(0% 100% 0% 0%)" : "inset(0% 0% 0% 100%)";
+  return (
+    <motion.div
+      className={className}
+      initial={{ clipPath: from }}
+      whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 1.25, ease, delay }}
+    >
+      <motion.div
+        className="h-full w-full"
+        initial={{ scale: 1.25 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 1.6, ease, delay }}
+      >
+        {children}
+      </motion.div>
+    </motion.div>
+  );
+}
+
+/** Paragraph whose words light up one by one as it scrolls through the viewport. */
+export function ScrollWords({ text, className, highlight = [] }: { text: string; className?: string; highlight?: string[] }) {
+  const ref = useRef<HTMLParagraphElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 85%", "end 45%"] });
+  const words = text.split(" ");
+  return (
+    <p ref={ref} className={className}>
+      {words.map((w, i) => (
+        <Word
+          key={i}
+          progress={scrollYProgress}
+          range={[i / words.length, (i + 1) / words.length]}
+          accent={highlight.includes(w.replace(/[^\w']/g, ""))}
+        >
+          {w}
+        </Word>
+      ))}
+    </p>
+  );
+}
+
+function Word({
+  children,
+  progress,
+  range,
+  accent,
+}: {
+  children: string;
+  progress: ReturnType<typeof useScroll>["scrollYProgress"];
+  range: [number, number];
+  accent: boolean;
+}) {
+  const opacity = useTransform(progress, range, [0.15, 1]);
+  return (
+    <motion.span style={{ opacity }} className={`mr-[0.25em] inline-block ${accent ? "serif-accent text-pop-400" : ""}`}>
+      {children}
+    </motion.span>
+  );
+}

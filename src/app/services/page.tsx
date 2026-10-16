@@ -4,7 +4,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { Steps } from "@/components/Steps";
 import { FAQ } from "@/components/FAQ";
 import { CTABanner, Marquee, PageHero, Photo, SectionHeading } from "@/components/ui";
-import { Reveal } from "@/components/motion";
+import { ClipReveal, Reveal } from "@/components/motion";
 import { services } from "@/lib/content";
 import { img } from "@/lib/images";
 
@@ -21,11 +21,12 @@ export default function ServicesPage() {
         eyebrow="Our services"
         title={
           <>
-            Everything you need to <span className="serif-accent text-pop-500">fix &amp; build</span> your credit
+            Everything you need to <span className="serif-accent text-pop-400">fix &amp; build</span> your credit
           </>
         }
         lede="From challenging inaccurate negatives to building strong positive history, we cover every step between where you are today and the approval you're after."
-        image={img.manLaptop2}
+        image={img.officeTeam}
+        image2={img.reviewing}
       />
 
       <Marquee />
@@ -33,14 +34,16 @@ export default function ServicesPage() {
       <section className="container-x space-y-24 py-24 sm:space-y-32 sm:py-32">
         {services.map((s, i) => (
           <div key={s.slug} id={s.slug} className="grid scroll-mt-28 items-center gap-12 lg:grid-cols-2 lg:gap-20">
-            <Reveal x={i % 2 ? 30 : -30} y={0} className={i % 2 ? "lg:order-2" : ""}>
+            <div className={i % 2 ? "lg:order-2" : ""}>
               <div className="relative">
-                <Photo image={s.image} className="aspect-[5/4] rounded-[2rem] shadow-lift" parallax={35} />
+                <ClipReveal direction={i % 2 ? "right" : "left"} className="aspect-[5/4] overflow-hidden rounded-[2rem] shadow-lift">
+                  <Photo image={s.image} className="h-full" />
+                </ClipReveal>
                 <span className="absolute -top-5 -left-3 rounded-2xl bg-pop-500 px-4 py-2 text-lg font-extrabold text-white shadow-glow sm:-left-5">
                   0{i + 1}
                 </span>
               </div>
-            </Reveal>
+            </div>
             <div>
               <Reveal>
                 <h2 className="section-title">{s.title}</h2>
@@ -79,7 +82,7 @@ export default function ServicesPage() {
         </Reveal>
       </section>
 
-      <CTABanner image={img.movingBoxes} />
+      <CTABanner image={img.carCouple} />
     </>
   );
 }

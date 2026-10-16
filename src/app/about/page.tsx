@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Eye, HeartHandshake, ShieldCheck, Sparkles, Target } from "lucide-react";
 import { CTABanner, PageHero, Photo, SectionHeading } from "@/components/ui";
-import { Counter, Reveal, Stagger, StaggerItem } from "@/components/motion";
+import { ClipReveal, Counter, Reveal, Stagger, StaggerItem } from "@/components/motion";
 import { img } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -24,11 +24,12 @@ export default function AboutPage() {
         eyebrow="About us"
         title={
           <>
-            We&apos;re in the business of <span className="serif-accent text-pop-500">second chances</span>
+            We&apos;re in the business of <span className="serif-accent text-pop-400">second chances</span>
           </>
         }
         lede="Get Your Credit Poppin was built on a simple belief: one rough season shouldn't define your financial future. We help everyday people clean up their credit, build it back stronger and take control of what comes next."
-        image={img.womanDesk}
+        image={img.dadDaughter2}
+        image2={img.celebrate}
       />
 
       {/* Story */}
@@ -36,10 +37,14 @@ export default function AboutPage() {
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div className="relative grid grid-cols-2 gap-4">
             <Reveal>
-              <Photo image={img.couple} className="aspect-[3/4] rounded-[1.75rem]" sizes="25vw" />
+              <ClipReveal className="aspect-[3/4] overflow-hidden rounded-[1.75rem]">
+                <Photo image={img.momSon} className="h-full" sizes="25vw" />
+              </ClipReveal>
             </Reveal>
             <Reveal delay={0.15} className="mt-12">
-              <Photo image={img.businessMan} className="aspect-[3/4] rounded-[1.75rem]" sizes="25vw" />
+              <ClipReveal delay={0.15} className="aspect-[3/4] overflow-hidden rounded-[1.75rem]">
+                <Photo image={img.shopOwner} className="h-full" sizes="25vw" />
+              </ClipReveal>
             </Reveal>
             <Reveal delay={0.3} className="absolute -bottom-8 left-1/2 -translate-x-1/2">
               <div className="rounded-2xl bg-ink px-6 py-4 text-center text-white shadow-lift">
@@ -77,17 +82,22 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission */}
-      <section className="relative overflow-hidden bg-cloud py-24 sm:py-32">
-        <div className="container-x">
+      {/* Mission over the OKC skyline */}
+      <section className="relative overflow-hidden bg-ink py-32 text-white sm:py-44">
+        <Photo image={img.okcSkyline} className="absolute! inset-0 opacity-60" sizes="100vw" parallax={80} />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-ink/90" />
+        <div className="container-x relative">
           <Reveal>
             <div className="mx-auto max-w-4xl text-center">
-              <span className="eyebrow">
+              <span className="eyebrow-dark">
                 <Sparkles className="h-3.5 w-3.5" /> Our mission
               </span>
-              <p className="mt-8 text-3xl leading-tight font-bold tracking-tight sm:text-4xl lg:text-5xl">
+              <p className="mt-8 text-3xl leading-tight font-bold tracking-tight sm:text-4xl lg:text-[3.4rem]">
                 To give every client the knowledge, tools and support to build credit that{" "}
-                <span className="serif-accent text-pop-500">opens doors</span> — and keeps them open.
+                <span className="serif-accent text-pop-400">opens doors</span> — and keeps them open.
+              </p>
+              <p className="mt-8 text-sm font-semibold tracking-[0.2em] text-white/60 uppercase">
+                Proudly rooted in Oklahoma City
               </p>
             </div>
           </Reveal>
@@ -113,7 +123,7 @@ export default function AboutPage() {
       {/* Photo strip */}
       <section className="overflow-hidden pb-8">
         <Stagger className="container-x grid grid-cols-2 gap-4 md:grid-cols-4">
-          {[img.familyHug, img.manLaptop, img.heroSmile, img.newHome].map((p) => (
+          {[img.portraitA, img.manSuit, img.portraitC, img.dadDaughter].map((p) => (
             <StaggerItem key={p.src}>
               <div className="group">
                 <Photo image={p} className="aspect-[4/5] rounded-[1.5rem]" sizes="25vw" zoom />
@@ -123,7 +133,7 @@ export default function AboutPage() {
         </Stagger>
       </section>
 
-      <CTABanner image={img.experts} />
+      <CTABanner image={img.kitchenCouple} />
     </>
   );
 }

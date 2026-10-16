@@ -31,6 +31,7 @@
   --shadow-glow: 0 18px 40px -12px rgb(255 107 26 / 0.55);
 
   --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee-slow: marquee 70s linear infinite;
   --animate-float: float 6s ease-in-out infinite;
 
   @keyframes marquee {

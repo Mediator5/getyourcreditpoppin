@@ -1,31 +1,53 @@
 // All photography is from Unsplash (free to use under the Unsplash License).
-// Swap any ID below to change a photo everywhere it is used.
+// Each image was hand-picked for its section. Swap any ID to change a photo
+// everywhere it is used.
 
 const u = (id: string) => `https://images.unsplash.com/photo-${id}`;
 
 export const img = {
-  heroWoman: { src: u("1604933762021-54a5858c9832"), alt: "Woman with braids reviewing her credit on a laptop" },
-  heroSmile: { src: u("1649705334412-b51e97c38248"), alt: "Smiling woman celebrating good news" },
-  family: { src: u("1647616927583-1d44a79a38a5"), alt: "Happy family posing together at home" },
-  familyHug: { src: u("1624272864537-8ecc72b67958"), alt: "Father hugging his child" },
-  experts: { src: u("1573496358007-6fe62e3d9010"), alt: "Credit specialist working on a laptop in a bright office" },
-  newHome: { src: u("1758523671285-9ff3f4e0ff38"), alt: "Couple happily moving into their new home" },
-  movingBoxes: { src: u("1758523670991-ee93bc48d81d"), alt: "Couple carrying boxes into a new house" },
-  couple: { src: u("1655683576616-c40706fa79f2"), alt: "Happy couple smiling outdoors" },
-  coupleKitchen: { src: u("1606787503066-794bb59c64bc"), alt: "Couple cooking together at home" },
+  // Hero
+  heroLaptop: { src: u("1615891081220-9116de3e1afd"), alt: "Woman laughing while checking good news on her laptop" },
+  heroCouple: { src: u("1571771826307-98d0d0999028"), alt: "Couple laughing together" },
+  keysDoor: { src: u("1741156386380-0236c72eb6f9"), alt: "Holding the keys to a new home in the doorway" },
+
+  // Homeownership
+  movingIn: { src: u("1590464216837-85cd68b5cdd2"), alt: "Couple carrying boxes into their new home" },
+  movingCouch: { src: u("1590464216822-9342156321f2"), alt: "Couple relaxing among moving boxes in their new place" },
+  kitchenCouple: { src: u("1602780765205-532dc7f6ded3"), alt: "Couple smiling together in their new kitchen" },
+
+  // Cars & money
+  carKey: { src: u("1557598628-bdd7d0767917"), alt: "Woman proudly holding up the key to her new car" },
+  carCouple: { src: u("1541253361369-0bad3e717ba5"), alt: "Couple embracing beside their car at sunset" },
+  phoneApp: { src: u("1615890643735-6cd26210d646"), alt: "Woman smiling at her banking app on her phone" },
+  phoneStudio: { src: u("1739271933163-8dcc7c8e8a3e"), alt: "Woman smiling at her phone" },
+
+  // Business
+  entrepreneur: { src: u("1611432579402-7037e3e2c1e4"), alt: "Confident businesswoman in a yellow blazer holding a tablet" },
+  shopOwner: { src: u("1687422808248-f807f4ea2a2e"), alt: "Small business owner smiling behind his counter" },
+  manSuit: { src: u("1631131431211-4f768d89087d"), alt: "Smiling professional in a blue suit" },
+
+  // Working with us
+  paperwork: { src: u("1743017523548-540a7a0b682b"), alt: "Couple reviewing their credit reports together" },
+  consultation: { src: u("1739292774732-09443c4c9478"), alt: "Client and advisor talking through a plan" },
+  reviewing: { src: u("1758525861882-39151c7a9804"), alt: "Two women going over paperwork and smiling" },
+  officeTeam: { src: u("1573164713619-24c711fe7878"), alt: "Team working together on laptops" },
+  officeFolder: { src: u("1573164713347-df1f7d6aeb03"), alt: "Professional reviewing a client folder" },
+  yellowLaptop: { src: u("1707325345025-4a02a9bc5fc7"), alt: "Smiling woman at her laptop against a bright yellow wall" },
+
+  // People & families
+  celebrate: { src: u("1747848214256-34a8cd21abac"), alt: "Woman celebrating with both fists raised" },
+  dadDaughter: { src: u("1513774415755-ab8d0ef5e23c"), alt: "Father and daughter smiling together" },
+  dadDaughter2: { src: u("1580970727081-021c85d36531"), alt: "Proud father with his daughter" },
+  momSon: { src: u("1597098469273-834bc9d81f0a"), alt: "Mother laughing with her son" },
+  portraitA: { src: u("1662850886700-4ec19bd30d11"), alt: "Young woman smiling" },
+  portraitB: { src: u("1561406636-b80293969660"), alt: "Woman with a big smile" },
+  portraitC: { src: u("1508002366005-75a695ee2d17"), alt: "Woman laughing" },
   manSmile: { src: u("1522529599102-193c0d76b5b6"), alt: "Man smiling confidently" },
-  manLaptop: { src: u("1612299273045-362a39972259"), alt: "Man smiling while working on a laptop" },
-  manLaptop2: { src: u("1594077810908-9ffd89d704ac"), alt: "Young man working on his laptop at home" },
-  businessMan: { src: u("1758519291531-e96279895745"), alt: "Business owner laughing while checking his phone" },
-  handshake: { src: u("1686771416282-3888ddaf249b"), alt: "Client and advisor shaking hands over paperwork" },
-  cardOnline: { src: u("1563013544-824ae1b704d3"), alt: "Person paying online with a card" },
-  cardPayment: { src: u("1556740720-776b84291f8e"), alt: "Card payment at a terminal" },
-  keys: { src: u("1643804926339-e94f0a655185"), alt: "House keys on a wooden table" },
-  documents: { src: u("1772588627373-729b0f47e5bb"), alt: "Reviewing financial documents with a calculator" },
-  charts: { src: u("1762427354397-854a52e0ded7"), alt: "Desk with calculator and colorful charts" },
-  phoneCall: { src: u("1686723726446-8b881f37ce62"), alt: "Woman on a phone call outside" },
-  womanPhone: { src: u("1623619096678-71d4d958635e"), alt: "Woman checking her phone" },
-  womanDesk: { src: u("1762160687270-1602d25749b6"), alt: "Woman working on a laptop surrounded by plants" },
+  glasses: { src: u("1573497019418-b400bb3ab074"), alt: "Smiling woman in glasses" },
+
+  // Oklahoma City
+  okcSkyline: { src: u("1592276480286-08b843b65726"), alt: "Oklahoma City skyline reflected at sunset" },
+  okcTowers: { src: u("1594046759646-aa9798e00a34"), alt: "Downtown Oklahoma City towers at golden hour" },
 };
 
 export type Img = { src: string; alt: string };
