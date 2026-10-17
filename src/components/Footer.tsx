@@ -13,7 +13,7 @@ export function Footer() {
       <div className="container-x relative pt-20 pb-28 md:pb-10">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <Logo dark />
+            <Logo dark size="lg" />
             <p className="mt-6 max-w-sm leading-relaxed text-white/60">
               Oklahoma City&apos;s credit repair and credit building partner. We fight for accurate reports and
               help you build the kind of credit that opens doors.

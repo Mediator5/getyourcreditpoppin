@@ -73,7 +73,7 @@ export default function ContactPage() {
           {cards.map(({ icon: Icon, label, value, href }) => {
             const inner = (
               <>
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-50 text-brand-600 transition-colors duration-500 group-hover:bg-pop-500 group-hover:text-white">
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-50 text-brand-600 transition-colors duration-500 group-hover:bg-pop-500 group-hover:text-ink">
                   <Icon className="h-5 w-5" />
                 </span>
                 <div className="mt-5 text-xs font-semibold tracking-wide text-muted uppercase">{label}</div>

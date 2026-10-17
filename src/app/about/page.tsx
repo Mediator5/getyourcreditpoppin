@@ -110,7 +110,7 @@ export default function AboutPage() {
         <Stagger className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {values.map(({ icon: Icon, t, b }) => (
             <StaggerItem key={t} className="card group p-7 transition duration-500 hover:-translate-y-2 hover:shadow-lift">
-              <span className="grid h-14 w-14 place-items-center rounded-2xl bg-pop-50 text-pop-500 transition-all duration-500 group-hover:rotate-[-8deg] group-hover:bg-pop-500 group-hover:text-white">
+              <span className="grid h-14 w-14 place-items-center rounded-2xl bg-pop-50 text-pop-600 transition-all duration-500 group-hover:rotate-[-8deg] group-hover:bg-pop-500 group-hover:text-ink">
                 <Icon className="h-6 w-6" />
               </span>
               <h3 className="mt-6 text-lg font-bold tracking-tight">{t}</h3>

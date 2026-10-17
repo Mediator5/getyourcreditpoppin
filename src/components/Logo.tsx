@@ -1,37 +1,23 @@
 import Link from "next/link";
 
-export function LogoMark({ className = "h-9 w-9" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 40 40" className={className} aria-hidden="true">
-      <defs>
-        <linearGradient id="lm-g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#2f6bff" />
-          <stop offset="1" stopColor="#173eb3" />
-        </linearGradient>
-      </defs>
-      <rect width="40" height="40" rx="12" fill="url(#lm-g)" />
-      <path
-        d="M9 27.5l7.2-7.2 4.6 4.6L31 14.7"
-        fill="none"
-        stroke="#fff"
-        strokeWidth="3.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path d="M24.5 14h7v7" fill="none" stroke="#fff" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="31.5" cy="8.5" r="3" fill="#ff6b1a" />
-    </svg>
-  );
+/** The official Get Your Credit Poppin mark (vector, transparent background). */
+export function LogoMark({ className = "h-11 w-11" }: { className?: string }) {
+  return <img src="/brand/logo-mark.svg" alt="" aria-hidden="true" className={className} width={44} height={44} />;
 }
 
-export function Logo({ dark = false }: { dark?: boolean }) {
+/** Mark + wordmark, laid out like the official logo ("GET YOUR" over "CREDIT POPPIN"). */
+export function Logo({ dark = false, size = "md" }: { dark?: boolean; size?: "md" | "lg" }) {
+  const lg = size === "lg";
   return (
     <Link href="/" className="group flex items-center gap-2.5" aria-label="Get Your Credit Poppin — home">
-      <LogoMark className="h-10 w-10 transition-transform duration-500 group-hover:rotate-[-6deg] group-hover:scale-105" />
-      <span className={`leading-none ${dark ? "text-white" : "text-ink"}`}>
-        <span className="block text-[0.7rem] font-semibold tracking-[0.18em] uppercase opacity-60">Get Your Credit</span>
-        <span className="block text-xl font-extrabold tracking-tight">
-          Poppin<span className="text-pop-500">!</span>
+      <LogoMark
+        className={`${lg ? "h-14 w-14" : "h-11 w-11"} shrink-0 transition-transform duration-500 group-hover:scale-105 group-hover:rotate-[-4deg]`}
+      />
+      <span className="leading-[1.05] font-extrabold tracking-[0.02em] uppercase">
+        <span className={`block ${lg ? "text-base" : "text-[0.8rem]"} ${dark ? "text-white" : "text-ink"}`}>Get Your</span>
+        <span className={`block ${lg ? "text-xl" : "text-[1.05rem]"}`}>
+          <span className={dark ? "text-brand-400" : "text-brand-700"}>Credit</span>{" "}
+          <span className="text-pop-500">Poppin</span>
         </span>
       </span>
     </Link>

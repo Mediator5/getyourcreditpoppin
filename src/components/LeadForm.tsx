@@ -68,7 +68,7 @@ export function LeadForm({
             <h3 className={`mt-6 text-2xl font-extrabold tracking-tight ${dark ? "text-white" : ""}`}>You&apos;re all set!</h3>
             <p className={`mt-2 max-w-sm ${dark ? "text-white/70" : "text-muted"}`}>
               Thanks for reaching out. A credit specialist will contact you shortly. Need us sooner? Call{" "}
-              <a href={site.phoneHref} className="font-semibold text-pop-500 underline-offset-4 hover:underline">
+              <a href={site.phoneHref} className="font-semibold text-pop-600 underline-offset-4 hover:underline">
                 {site.phone}
               </a>
               .

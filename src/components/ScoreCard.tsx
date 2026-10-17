@@ -23,7 +23,7 @@ export function ScoreCard({ from = 540, to = 724 }: { from?: number; to?: number
   }, [v, to]);
 
   const label = score >= 700 ? "Good" : score >= 640 ? "Fair" : "Poor";
-  const color = score >= 700 ? "#16c79a" : score >= 640 ? "#ffb020" : "#ff6b1a";
+  const color = score >= 700 ? "#16c79a" : score >= 640 ? "#ffb020" : "#f08c00";
 
   return (
     <div className="w-60 rounded-3xl border border-white/60 bg-white/85 p-5 shadow-lift backdrop-blur-xl">
@@ -35,7 +35,7 @@ export function ScoreCard({ from = 540, to = 724 }: { from?: number; to?: number
         <svg viewBox="0 0 200 110" className="w-full">
           <defs>
             <linearGradient id="gauge" x1="0" x2="1">
-              <stop offset="0" stopColor="#ff6b1a" />
+              <stop offset="0" stopColor="#ff7a00" />
               <stop offset="0.55" stopColor="#ffb020" />
               <stop offset="1" stopColor="#16c79a" />
             </linearGradient>

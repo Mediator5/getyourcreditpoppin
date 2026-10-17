@@ -32,7 +32,7 @@ export function Steps() {
                 <StaggerItem key={s.n} className="relative text-center">
                   <div className="relative mx-auto grid h-20 w-20 place-items-center rounded-3xl bg-white text-brand-600 shadow-lift">
                     <Icon className="h-8 w-8" />
-                    <span className="absolute -top-2 -right-2 grid h-8 w-8 place-items-center rounded-full bg-pop-500 text-xs font-bold text-white">
+                    <span className="absolute -top-2 -right-2 grid h-8 w-8 place-items-center rounded-full bg-pop-500 text-xs font-bold text-ink">
                       {s.n}
                     </span>
                   </div>

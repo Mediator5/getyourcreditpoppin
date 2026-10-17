@@ -31,8 +31,8 @@ export function emailShell(title: string, body: string) {
   <table width="100%" cellpadding="0" cellspacing="0" style="padding:32px 12px"><tr><td align="center">
     <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#ffffff;border-radius:20px;overflow:hidden;border:1px solid #e6e9f2">
       <tr><td style="background:#0a1023;padding:28px 32px">
-        <div style="font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#ffffff99">Get Your Credit</div>
-        <div style="font-size:24px;font-weight:800;color:#ffffff">Poppin<span style="color:#ff6b1a">!</span></div>
+        <div style="font-size:13px;font-weight:800;letter-spacing:2px;color:#ffffff">GET YOUR</div>
+        <div style="font-size:24px;font-weight:800;letter-spacing:1px"><span style="color:#4d86ff">CREDIT</span> <span style="color:#ffa500">POPPIN</span></div>
       </td></tr>
       <tr><td style="padding:32px">
         <h1 style="margin:0 0 20px;font-size:22px;line-height:1.3">${title}</h1>

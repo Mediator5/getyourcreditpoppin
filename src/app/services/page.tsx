@@ -39,7 +39,7 @@ export default function ServicesPage() {
                 <ClipReveal direction={i % 2 ? "right" : "left"} className="aspect-[5/4] overflow-hidden rounded-[2rem] shadow-lift">
                   <Photo image={s.image} className="h-full" />
                 </ClipReveal>
-                <span className="absolute -top-5 -left-3 rounded-2xl bg-pop-500 px-4 py-2 text-lg font-extrabold text-white shadow-glow sm:-left-5">
+                <span className="absolute -top-5 -left-3 rounded-2xl bg-pop-500 px-4 py-2 text-lg font-extrabold text-ink shadow-glow sm:-left-5">
                   0{i + 1}
                 </span>
               </div>

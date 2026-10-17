@@ -28,7 +28,7 @@ function ServiceBlock({ index, onActive }: { index: number; onActive: (i: number
         transition={{ duration: 0.5 }}
         className="max-lg:opacity-100!"
       >
-        <span className="font-serif text-6xl text-pop-500 italic">0{index + 1}</span>
+        <span className="font-serif text-6xl text-pop-600 italic">0{index + 1}</span>
         <h3 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">{s.title}</h3>
         <p className="mt-4 max-w-lg text-lg leading-relaxed text-muted">{s.long}</p>
         <ul className="mt-7 grid max-w-lg gap-3 sm:grid-cols-2">

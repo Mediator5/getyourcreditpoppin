@@ -36,11 +36,11 @@ export default function Home() {
               <Photo image={img.paperwork} className="h-full" sizes="25vw" />
             </ClipReveal>
             <Reveal delay={0.5} className="absolute top-8 left-2 sm:left-6">
-              <div className="rounded-2xl bg-pop-500 px-5 py-4 text-white shadow-glow">
+              <div className="rounded-2xl bg-pop-500 px-5 py-4 text-ink shadow-glow">
                 <div className="text-3xl font-extrabold tracking-tight">
                   <Counter to={82} suffix="%" />
                 </div>
-                <div className="text-xs font-semibold text-white/85">client success rate</div>
+                <div className="text-xs font-semibold text-ink/75">client success rate</div>
               </div>
             </Reveal>
           </div>
@@ -87,7 +87,7 @@ export default function Home() {
             eyebrow="Who we help"
             title={
               <>
-                Real people. <span className="serif-accent text-pop-500">Real goals.</span>
+                Real people. <span className="serif-accent text-pop-600">Real goals.</span>
               </>
             }
             lede="Everyone who walks through our door has something they're working toward. Better credit is how we get you there."
@@ -113,7 +113,7 @@ export default function Home() {
           />
 
           <Stagger className="mt-20 grid gap-5 md:grid-cols-[1.2fr_1fr_1fr]">
-            <StaggerItem className="relative overflow-hidden rounded-[1.75rem] bg-pop-500 p-8">
+            <StaggerItem className="relative overflow-hidden rounded-[1.75rem] bg-pop-500 p-8 text-ink">
               <div className="text-7xl font-extrabold tracking-tighter">
                 <Counter to={82} suffix="%" />
               </div>
@@ -167,7 +167,7 @@ export default function Home() {
           eyebrow="What good credit unlocks"
           title={
             <>
-              Giving you <span className="serif-accent text-pop-500">financial power</span>
+              Giving you <span className="serif-accent text-pop-600">financial power</span>
             </>
           }
           lede="Your score affects almost every big move you make. Here's what opens up when your credit is working for you."
@@ -183,7 +183,7 @@ export default function Home() {
                   <h3 className={`font-extrabold tracking-tight ${i === 0 ? "text-3xl sm:text-4xl" : "text-2xl"}`}>{u.title}</h3>
                   <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/80">{u.body}</p>
                 </div>
-                <span className="absolute top-5 right-5 grid h-11 w-11 place-items-center rounded-full bg-white/15 text-white backdrop-blur transition-all duration-500 group-hover:rotate-[-45deg] group-hover:bg-pop-500">
+                <span className="absolute top-5 right-5 grid h-11 w-11 place-items-center rounded-full bg-white/15 text-white backdrop-blur transition-all duration-500 group-hover:rotate-[-45deg] group-hover:bg-pop-500 group-hover:text-ink">
                   <ArrowRight className="h-5 w-5" />
                 </span>
               </ClipReveal>
@@ -204,7 +204,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-ink" />
               <div className="absolute right-6 bottom-6 left-6 lg:right-auto">
                 <div className="inline-flex items-center gap-3 rounded-2xl bg-ink/75 p-3 pr-5 backdrop-blur-md">
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-pop-500">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-pop-500 text-ink">
                     <Phone className="h-5 w-5" />
                   </span>
                   <div>
@@ -250,7 +250,7 @@ export default function Home() {
           <Stagger className="mt-14 grid gap-6 md:grid-cols-3">
             {testimonials.map((t) => (
               <StaggerItem key={t.name} className="card p-8">
-                <Quote className="h-8 w-8 text-pop-500" />
+                <Quote className="h-8 w-8 text-pop-600" />
                 <p className="mt-5 leading-relaxed">{t.quote}</p>
                 <div className="mt-6 font-bold">{t.name}</div>
                 {t.detail && <div className="text-sm text-muted">{t.detail}</div>}

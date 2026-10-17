@@ -24,7 +24,7 @@ export function FAQ() {
                 animate={{ rotate: isOpen ? 45 : 0 }}
                 transition={{ duration: 0.3 }}
                 className={`grid h-9 w-9 shrink-0 place-items-center rounded-full transition-colors ${
-                  isOpen ? "bg-pop-500 text-white" : "bg-cloud text-ink"
+                  isOpen ? "bg-pop-500 text-ink" : "bg-cloud text-ink"
                 }`}
               >
                 <Plus className="h-4 w-4" />
